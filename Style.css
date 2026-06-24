@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-main: #181716; 
+    --surface-dark: #22201e; 
+    --gold-orange: #ff9f05; 
+    --text-white: #fcfbfa;
+    --text-grey: #b5b0aa;
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-white);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    z-index: 1000;
+    background-color: rgba(24, 23, 22, 0.95);
+    border-bottom: 1px solid rgba(255, 159, 5, 0.15);
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--gold-orange);
+    letter-spacing: 3px;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold-orange);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(24,23,22,1)), 
+                url('https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1600') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 400;
+    margin: 10px 0 20px;
+    letter-spacing: 2px;
+}
+
+.hero-content .subtitle {
+    font-size: 0.8rem;
+    color: var(--gold-orange);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.hero-description {
+    color: var(--text-grey);
+    max-width: 500px;
+    margin: 0 auto 30px;
+    font-size: 0.85rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 1px solid var(--gold-orange);
+    color: var(--gold-orange);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--gold-orange);
+    color: #181716;
+}
+
+/* --- PREMIUM MENU OVERLAY --- */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #151413; 
+    z-index: 2000;
+    overflow-y: auto;
+    padding: 20px 4%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95) translateY(30px);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) translateY(0);
+}
+
+.menu-overlay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--gold-orange);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.menu-logo {
+    font-family: var(--font-heading);
+    color: var(--gold-orange);
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.close-btn {
+    background: var(--gold-orange);
+    border: none;
+    color: #000;
+    font-weight: 700;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* IMAGE SLIDER */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 159, 5, 0.3);
+    margin-bottom: 30px;
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: var(--gold-orange);
+    width: 18px;
+    border-radius: 4px;
+}
+
+/* Welcome Header */
+.welcome-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.welcome-heading h2 {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    color: var(--gold-orange);
+    font-weight: 600;
+}
+
+.menu-tagline {
+    color: var(--text-white);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+
+/* CATEGORY CARDS GRID (Pasta, Burger, Pizza) */
+.food-categories-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    margin-bottom: 50px;
+}
+
+.category-card {
+    background: var(--surface-dark);
+    border: 1px solid rgba(255, 159, 5, 0.15);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    margin-top: 50px; 
+}
+
+.card-img-box {
+    width: 140px;
+    height: 140px;
+    margin: -80px auto 15px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid var(--gold-orange);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.card-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category-badge {
+    background: var(--gold-orange);
+    color: #000;
+    display: inline-block;
+    padding: 5px 25px;
+    font-weight: 700;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.item-price-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+    padding: 0 10px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed rgba(255,255,255,0.1);
+    padding-bottom: 6px;
+    font-size: 0.9rem;
+}
+
+.price-tag {
+    color: var(--gold-orange);
+    font-weight: bold;
+}
+
+/* ========================================================= */
+/* 🛠️ NEW EXTENDED SECTIONS GRID STYLING FOR TOPICS (FIXED) */
+/* ========================================================= */
+.visual-menu-container {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    margin-top: 30px;
+}
+
+.visual-section {
+    background: var(--surface-dark);
+    border: 1px solid rgba(255, 159, 5, 0.1);
+    border-radius: 12px;
+    padding: 20px 15px;
+}
+
+.visual-section-title {
+    color: var(--gold-orange);
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 159, 5, 0.2);
+    padding-bottom: 5px;
+}
+
+/* Mobile par 2 item side-by-side laane ki styling */
+.visual-items-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.food-photo-card {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.food-photo-card img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.food-photo-card h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-white);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    min-height: 38px; /* Taki titles align rahein */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.food-price {
+    color: var(--gold-orange);
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+/* Footer elements */
+footer {
+    padding: 60px 5% 30px;
+    text-align: center;
+    background-color: #11100f;
+}
+
+.reserve-box h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--gold-orange);
+}
+
+.copyright {
+    margin-top: 40px;
+    font-size: 0.7rem;
+    color: var(--text-grey);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 15px;
+}
+
+/* Timings List */
+.opening-hours-list {
+    margin: 25px auto;
+    max-width: 290px;
+    color: var(--text-grey);
+    font-size: 0.85rem;
+    font-family: var(--font-body);
+}
+
+.day-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px dashed rgba(255, 159, 5, 0.1);
+}
+
+.day-row span:first-child {
+    font-weight: 500;
+    text-align: left;
+}
+
+.day-row span:last-child {
+    color: var(--text-white);
+    font-weight: bold;
+    text-align: right;
+}
+
+/* Desktop Layout Adjustments */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 25px 8%;
+    }
+    .logo { font-size: 2rem; }
+    .nav-links { gap: 30px; }
+    .nav-links a { font-size: 0.8rem; }
+    .hero-content h1 { font-size: 4.8rem; }
+    
+    .menu-overlay { padding: 40px 12%; }
+    .slider-container { height: 380px; }
+    .food-categories-grid { flex-direction: row; gap: 25px; margin-top: 80px; }
+    .category-card { flex: 1; }
+    
+    /* Desktop par 4 items side-by-side dikhane ke liye */
+    .visual-items-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+    .food-photo-card img { height: 150px; }
+    .opening-hours-list { max-width: 350px; font-size: 0.9rem; }
+  }

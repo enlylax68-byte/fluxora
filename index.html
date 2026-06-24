@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluxora Fine Dining</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">FLUXORA</a>
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#" class="open-menu-btn">Our Menu</a>
+            <a href="#reservations">Reservations</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="subtitle">Experience Luxury Hospitality</span>
+            <h1>FLUXORA</h1>
+            <p class="hero-description">Experience India's richest culinary heritage reimagined with modern luxury and gold class hospitality.</p>
+            <a href="#" class="btn open-menu-btn">View Full Menu</a>
+        </div>
+    </section>
+
+    <div class="menu-overlay" id="menu-page">
+        <div class="menu-overlay-header">
+            <span class="menu-logo">FLUXORA MENU</span>
+            <button class="close-btn" id="close-menu-btn">CLOSE</button>
+        </div>
+
+        <div class="slider-container">
+            <div class="slider">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1600" class="slide active" alt="Slider 1">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600" class="slide" alt="Slider 2">
+                <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1600" class="slide" alt="Slider 3">
+            </div>
+            <div class="slider-dots">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+
+        <div class="welcome-heading">
+            <h2>Our Signature Categories</h2>
+            <p class="menu-tagline">Crafted by Michelin-starred chefs</p>
+        </div>
+
+        <div class="food-categories-grid">
+            <div class="category-card">
+                <div class="card-img-box">
+                    <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?q=80&w=600" alt="Pasta">
+                </div>
+                <span class="category-badge">Pasta</span>
+                <div class="item-price-list">
+                    <div class="price-row"><span>White Sauce Pasta</span><span class="price-tag">$5</span></div>
+                    <div class="price-row"><span>Red Sauce Pasta</span><span class="price-tag">$6</span></div>
+                    <div class="price-row"><span>Mixed Sauce Pasta</span><span class="price-tag">$7</span></div>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="card-img-box">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=600" alt="Burger">
+                </div>
+                <span class="category-badge">Burger</span>
+                <div class="item-price-list">
+                    <div class="price-row"><span>Aloo Tikki Burger</span><span class="price-tag">$2</span></div>
+                    <div class="price-row"><span>Cheese Burger</span><span class="price-tag">$3</span></div>
+                    <div class="price-row"><span>Zinger Burger</span><span class="price-tag">$4</span></div>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="card-img-box">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=600" alt="Pizza">
+                </div>
+                <span class="category-badge">Pizza</span>
+                <div class="item-price-list">
+                    <div class="price-row"><span>Small Pizza</span><span class="price-tag">$3</span></div>
+                    <div class="price-row"><span>Medium Pizza</span><span class="price-tag">$4</span></div>
+                    <div class="price-row"><span>Big Pizza</span><span class="price-tag">$5</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="visual-menu-container">
+            
+            <div class="visual-section">
+                <h3 class="visual-section-title">Starters</h3>
+                <div class="visual-items-grid">
+                    <div class="food-photo-card">
+                        <img src="https://images.unsplash.com/photo-1531749668029-2db88e4b76ce?q=80&w=500" alt="Mozzarella Sticks">
+                        <h4>Mozzarella Sticks</h4>
+                        <span class="food-price">$7.99</span>
+                    </div>
+                    <div class="food-photo-card">
+                        <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=500" alt="Stuffed Mushrooms">
+                        <h4>Stuffed Mushrooms</h4>
+                        <span class="food-price">$8.99</span>
+                    </div>
+                    <div class="food-photo-card">
+                        <img src="https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=500" alt="Chicken Tenders">
+                        <h4>Chicken Tenders</h4>
+                        <span class="food-price">$9.99</span>
+                    </div>
+                    <div class="food-photo-card">
+                        <img src="https://images.unsplash.com/photo-1572448862527-d3c904757de6?q=80&w=500" alt="Bruschetta">
+                        <h4>Bruschetta</h4>
+                        <span class="food-price">$6.69</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visual-section">
+                <h3 class="visual-section-title">Main Course</h3>
+                <div class="visual-items-grid">
+                    <div class="food-photo-card">
+                        <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=500" alt="Grilled Salmon">
+                        <h4>Grilled Salmon</h4>
+                        <span class="food-price">$18.99</span>
+                    </div>
+                    <div class="food-photo-card">
+                        <img src="https://images.unsplash.com/photo-1632778149955-e80f8ceca3e8?q=80&w=500" alt="Chicken Parmesan">
+                        <h4>Chicken Parmesan</h4>
+                        <span class="food-price">$16.99</span>
+                    </div>
+                    <div class="food-photo-card">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=500" alt="Ribeye Steak">
+                        <h4>Ribeye Steak</h4>
+                        <span class="food-price">$24.99</span>
+                    </div>
+                    <div class="food-photo-card">
+                        <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=500" alt="Vegetable Stir-Fry">
+                        <h4>Vegetable Stir-Fry</h4>
+                        <span class="food-price">$14.99</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visual-section">
+                <h3 class="visual-section-title">Soup & Salad</h3>
+                <div class="visual-items-grid">
+                    <div class="food-photo-card">
+                        <img src="https://images.unsplash.com/photo-1550304943-4f24f54ddde9?q=80&w=500" alt="Caesar Salad">
+                        <h4>Caesar Salad</h4>
+                        <span class="food-price">$10.99</span>
+                    </div>
+                    <div class="food-photo-card">
+                        <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=500" alt="Greek Salad">
+                        <h4>Greek Salad</h4>
+                        <span class="food-price">$11.99</span>
+                    </div>
+                    <div class="food-photo-card">
+                        <img src="https://images.unsplash.com/photo-1547592165-e1d17fed6005?q=80&w=500" alt="Chicken Tortilla Soup">
+                        <h4>Chicken Tortilla</h4>
+                        <span class="food-price">$7.99</span>
+                    </div>
+                    <div class="food-photo-card">
+                        <img src="https://images.unsplash.com/photo-1541832676-9b763b0239ab?q=80&w=500" alt="Clam Chowder">
+                        <h4>Clam Chowder</h4>
+                        <span class="food-price">$8.99</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visual-section">
+                <h3 class="visual-section-title">Beverages</h3>
+                <div class="visual-items-grid">
+                    <div class="food-photo-card">
+                        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=500" alt="Iced Tea">
+                        <h4>Iced Tea</h4>
+                        <span class="food-price">$2.99</span>
+                    </div>
+                    <div class="food-photo-card">
+                        <img src="https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?q=80&w=500" alt="Lemonade">
+                        <h4>Lemonade</h4>
+                        <span class="food-price">$2.99</span>
+                    </div>
+                    <div class="food-photo-card">
+                        <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=500" alt="Soda">
+                        <h4>Soda</h4>
+                        <span class="food-price">$2.49</span>
+                    </div>
+                    <div class="food-photo-card">
+                        <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?q=80&w=500" alt="Milkshakes">
+                        <h4>Milkshakes</h4>
+                        <span class="food-price">$4.99</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer id="reservations">
+        <div class="reserve-box">
+            <h2>Reserve A Shahi Table</h2>
+            <p>Tables are highly limited at Fluxora. Book your luxury dining experience in advance.</p>
+            
+            <a href="https://wa.me/919354487237?text=Hello%20Fluxora!%20Mujhe%20ek%20luxury%20table%20reserve%20karni%20hai.%20Please%20meri%20booking%20confirm%20karein." class="btn" id="reserve-btn" target="_blank">BOOK A TABLE</a>
+        </div>
+
+        <div class="opening-hours-list">
+            <div class="day-row"><span>Wednesday</span><span>11:00 am–11:00 pm</span></div>
+            <div class="day-row"><span>Thursday</span><span>11:00 am–11:00 pm</span></div>
+            <div class="day-row"><span>Friday</span><span>11:00 am–11:00 pm</span></div>
+            <div class="day-row"><span>Saturday</span><span>11:00 am–11:00 pm</span></div>
+            <div class="day-row"><span>Sunday</span><span>11:00 am–11:00 pm</span></div>
+            <div class="day-row"><span>Monday</span><span>11:00 am–11:00 pm</span></div>
+            <div class="day-row"><span>Tuesday</span><span>11:00 am–11:00 pm</span></div>
+        </div>
+
+        <div class="copyright">
+            &copy; 2026 Fluxora Fine Dining. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+  </html>
